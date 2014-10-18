@@ -1,0 +1,32 @@
+.creator-dashboard
+	.exams-section 
+		h4 
+			span Exam
+			.action
+				= link_to new_exam_path
+					i class='fa fa-plus'
+
+		ul.exams
+			- @exams.each do |exam|
+				li.exam
+					.name
+						= link_to exam.name, exam_path(exam)
+					.action
+						= link_to edit_exam_path(exam)
+							i class='fa fa-edit'
+						= link_to exam_path(exam), method: :delete do
+							i class='fa fa-remove'
+						a href=""
+							i class='fa fa-paper-plane'
+						a href="" 
+							i class='fa fa-users'
+
+	.qiz-section
+		.row
+			.col-sm-12
+				h4 Dashboard
+
+
+
+
+			

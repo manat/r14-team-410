@@ -1,0 +1,26 @@
+= form_for @exam do |f|
+	.form-group class="#{@exam.errors[:name].any? ? 'has-error' : ''}"
+		label class='control-label' Name
+		= f.text_field :name, class: 'form-control '
+		- if @exam.errors[:name]
+			p.help-block 
+				= @exam.errors[:name].first
+
+	.form-group class="#{@exam.errors[:description].any? ? 'has-error' : ''}"
+		label class='control-label' Description
+		= f.text_area :description, class: 'form-control '
+		- if @exam.errors[:description]
+			p.help-block 
+				= @exam.errors[:description].first
+
+	.form-group class="#{@exam.errors[:duration].any? ? 'has-error' : ''}"
+		label class='control-label' Duration (minutes)
+		= f.text_field :duration, class: 'form-control '
+		- if @exam.errors[:duration]
+			p.help-block 
+				= @exam.errors[:duration].first
+
+	.form-group
+		.col-sm-12
+			button class='btn btn-primary' submit
+			= link_to 'Cancel', exams_path, class: 'btn btn-default'
