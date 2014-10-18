@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 'The First Quiz Ever!'
+  question_type: 0
+  choice1: MyString
+  choice2: MyString
+  choice3: MyString
+  choice4: MyString
+  solution: MyText
+  exam_id: 
