@@ -19,6 +19,7 @@ gem 'font-awesome-rails'
 # gem 'nprogress-rails'
 # gem 'turbolinks'
 
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -34,12 +35,15 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Heroku gem to support asset serving and logging
+gem 'rails_12factor', group: :production
 
 ruby '2.1.3'
