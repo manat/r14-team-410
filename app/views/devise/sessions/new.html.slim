@@ -1,18 +1,46 @@
-h2
-  | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  div
-    = f.label 'username or email'
-    br
-    = f.text_field :login, autofocus: true
-  div
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  div
-    = f.submit "Log in"
-= render "devise/shared/links"
+.container-fluid
+  .row.text-center
+    .col-sm-12
+      h1 Welcome
+  .row.text-center
+    .col-sm-12
+      = retina_tag 'codercat.jpg'
+      .action
+        a.btn.btn-lg.btn-success Sign-in with GitHub
+  .row.text-center
+    .col-sm-12
+      h3 - or -
+  .row
+    
+  .row
+    .col-sm-4.col-sm-offset-4
+      .col-sm-10.col-sm-offset-1
+        form.form-horizontal
+          .form-group
+            .form-control-wrapper
+              input.form-control.empty placeholder="Username or email" name="user[login]" type="text" 
+          .form-group
+            .form-control-wrapper
+              input.form-control.empty placeholder="Password" name="user[password]" type="password" 
+          .action
+            button.btn.btn-primary.pull-right type="submit"  Submit
+  .row
+    .col-sm-4
+    .col-sm-4
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        div
+          = f.label 'username or email'
+          br
+          = f.text_field :login, autofocus: true
+        div
+          = f.label :password
+          br
+          = f.password_field :password, autocomplete: "off"
+        - if devise_mapping.rememberable?
+          div
+            = f.check_box :remember_me
+            = f.label :remember_me
+        div
+          = f.submit "Log in"
+      = render "devise/shared/links"
+    .col-sm-4
