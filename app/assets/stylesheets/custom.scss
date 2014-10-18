@@ -45,7 +45,7 @@ footer {
 			color: #E2CFBA;
 			max-width: 545px;
 			margin: 0 auto;
-			font-family: 'Avenir-Book';
+			font-family: 'Avenir-Book', sans-serif;
 		}
 		.action {
 			@include center;
@@ -66,7 +66,7 @@ footer {
 		.desc {
 			@include center;
 			margin-top: 30px;
-			font-family: Avenir-Book;
+			font-family: 'Avenir-Book', sans-serif;
 			font-size: 24px;
 		}
 	}
@@ -78,7 +78,7 @@ footer {
 		background-color: #F6F6F6;
 		.head {
 			@include center;
-			font-family: Avenir-Book;
+			font-family: 'Avenir-Book', sans-serif;
 			font-size: 40px;
 			color: #898989;
 		}
@@ -109,14 +109,14 @@ footer {
 		background-color: #FAFAFA;
 		.title {
 			@include center;
-			font-family: Avenir-Book;
+			font-family: 'Avenir-Book', sans-serif;
 			font-size: 40px;
 			color: #898989;
 		}
 		.desc {
 			@include center;
 			margin: 48px auto; 
-			font-family: Avenir-Book;
+			font-family: 'Avenir-Book', sans-serif;
 			font-size: 24px;
 			color: #29292F;
 			line-height: 33px;
