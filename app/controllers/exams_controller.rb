@@ -1,13 +1,13 @@
 class ExamsController < ApplicationController
-	before_action :set_exam, only: [:show, :edit, :update, :destroy]
+	before_action :set_exam, only: [:edit, :update, :destroy]
 
 	def index
 		current_user = Creator.first
-		@exams = Exam.where(creator: current_user) 
+		@exams = Exam.where(creator: current_user).order(created_at: :desc)
 	end
 
-	def show
-	end
+	# def show
+	# end
 
 	def new
 		@exam = Exam.new

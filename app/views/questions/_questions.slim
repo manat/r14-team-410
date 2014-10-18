@@ -1,0 +1,32 @@
+
+.exams-section 
+	h4 
+		= @exam.name
+		.action
+			= link_to exams_path
+				i class='fa fa-angle-left'
+	
+	.desc
+		= @exam.description
+
+	.duration
+		span in 
+		= @exam.duration
+		span  minutes	
+
+	.count
+		= pluralize @questions.count, 'question'
+		.action
+			= link_to new_exam_question_path(@exam)
+				i class='fa fa-plus'
+
+	ul.exams
+		- @questions.each do |question|
+			li.exam
+				.name
+					= link_to question.title, exam_question_path(@exam, question)
+				.action
+					= link_to edit_exam_question_path(@exam, question)
+						i class='fa fa-edit'
+					= link_to exam_question_path(@exam, question), method: :delete do
+						i class='fa fa-remove'

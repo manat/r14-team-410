@@ -1,0 +1,46 @@
+.exam-form
+	= render 'questions'
+		
+	.form-section
+		.page-header 
+			h4 Show
+		
+		.form-group
+			label class='control-label' Name
+			.form-control-static
+				= @question.title
+
+		.form-group
+			label class='control-label' Description
+			.form-control-static
+				= @question.description
+
+		.form-group
+			label class='control-label' Question Type
+			.form-control-static
+				= @question.question_type
+
+		.form-group
+			label class='control-label' Choice 1
+			.form-control-static
+				= @question.choice1
+
+		.form-group
+			label class='control-label' Choice 2
+			.form-control-static
+				= @question.choice2
+
+		.form-group
+			label class='control-label' Choice 3
+			.form-control-static
+				= @question.choice3
+
+		.form-group
+			label class='control-label' Choice 4
+			.form-control-static
+				= @question.choice4
+
+		.form-group
+			label class='control-label' Solution
+			.form-control-static
+				= @question.solution

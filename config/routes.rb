@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :exams do
+    resources :questions
+    # get 'exam/:exam_id/questions' => 'questions#exam'#, as: :exam_questions
   end
+
+  # get 'questions/exam/:exam_id' => 'questions#exam', as: :exam_questions
+  # resources :questions do
+  # end
+
   
 
   # You can have the root of your site routed with "root"

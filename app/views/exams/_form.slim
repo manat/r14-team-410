@@ -15,7 +15,7 @@
 
 	.form-group class="#{@exam.errors[:duration].any? ? 'has-error' : ''}"
 		label class='control-label' Duration (minutes)
-		= f.text_field :duration, class: 'form-control '
+		= f.number_field :duration, class: 'form-control '
 		- if @exam.errors[:duration]
 			p.help-block 
 				= @exam.errors[:duration].first

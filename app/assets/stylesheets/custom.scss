@@ -137,8 +137,10 @@ footer {
 	.exams-section {
 		width: 300px;
 		height: 100%;
+		max-height: 100%;
+		overflow-x: hidden;
+		overflow-y: scroll;
 		position: absolute;
-		min-height: 600px;
 		background-color: #efefef;
 		h4 {
 			padding: 20px 10px;
@@ -187,12 +189,14 @@ footer {
 		}	
 	}
 	.qiz-section, .form-section {
-		width: 700px;
+		width: 500px;
 		width: calc(100% - 300px);
 		height: 100%;
+		max-height: 100%;
+		overflow-x: hidden;
+		overflow-y: scroll;
 		background-color: #fff;
 		position: absolute;
-		min-height: 600px;
 		padding: 10px;
 		left: 300px;
 		> *:first-child {
@@ -202,8 +206,14 @@ footer {
 }
 
 .exam-form {
-	.exam-section {
+	.exams-section {
+		.desc, .duration {
+			margin-top: 10px;
+			padding: 0 10px;
+		}
+		.count {
+			margin: 10px 0 30px;
+			padding: 0 10px;
+		}
 	}	
-
-
 }

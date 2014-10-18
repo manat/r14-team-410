@@ -1,0 +1,63 @@
+
+= form_for [@exam, @question] do |f|
+	.form-group class="#{@question.errors[:title].any? ? 'has-error' : ''}"
+		label class='control-label' Name
+		= f.text_field :title, class: 'form-control '
+		- if @question.errors[:title]
+			p.help-block 
+				= @question.errors[:title].first
+
+	.form-group class="#{@question.errors[:description].any? ? 'has-error' : ''}"
+		label class='control-label' Description
+		= f.text_area :description, class: 'form-control '
+		- if @question.errors[:description]
+			p.help-block 
+				= @question.errors[:description].first
+
+	.form-group class="#{@question.errors[:question_type].any? ? 'has-error' : ''}"
+		label class='control-label' Question Type
+		= f.select :question_type, options_for_select(Question.question_types.collect { |q| [q[0].humanize, q[0]] }, selected: @question.question_type), {} , class: "form-control"
+
+		- if @exam.errors[:question_type]
+			p.help-block 
+				= @exam.errors[:question_type].first
+
+	.form-group class="#{@question.errors[:choice1].any? ? 'has-error' : ''}"
+		label class='control-label' Choice 1
+		= f.text_field :choice1, class: 'form-control '
+		- if @exam.errors[:choice1]
+			p.help-block 
+				= @exam.errors[:choice1].first
+
+	.form-group class="#{@question.errors[:choice2].any? ? 'has-error' : ''}"
+		label class='control-label' Choice 2
+		= f.text_field :choice2, class: 'form-control '
+		- if @exam.errors[:choice2]
+			p.help-block 
+				= @exam.errors[:choice2].first
+
+	.form-group class="#{@question.errors[:choice3].any? ? 'has-error' : ''}"
+		label class='control-label' Choice 3
+		= f.text_field :choice3, class: 'form-control '
+		- if @exam.errors[:choice3]
+			p.help-block 
+				= @exam.errors[:choice3].first
+
+	.form-group class="#{@question.errors[:choice4].any? ? 'has-error' : ''}"
+		label class='control-label' Choice 4
+		= f.text_field :choice4, class: 'form-control '
+		- if @exam.errors[:choice4]
+			p.help-block 
+				= @exam.errors[:choice4].first
+
+	.form-group class="#{@question.errors[:solution].any? ? 'has-error' : ''}"
+		label class='control-label' Solution
+		= f.text_area :solution, class: 'form-control '
+		- if @question.errors[:solution]
+			p.help-block 
+				= @question.errors[:solution].first
+
+	.form-group
+		.col-sm-12
+			button class='btn btn-primary' submit
+			= link_to 'Cancel', exams_path, class: 'btn btn-default'
