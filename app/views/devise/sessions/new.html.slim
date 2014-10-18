@@ -6,5 +6,5 @@
     .col-sm-12
       = retina_tag 'codercat.jpg'
       .action
-        a.btn.btn-lg.btn-success Sign-in with GitHub
+        a.btn.btn-lg.btn-success href=omniauth_authorize_path(resource_name, 'github') Sign-in with GitHub
   .row.bottom-space

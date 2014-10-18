@@ -11,4 +11,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) ||
+      if resource.is_a?(User)
+        exams_path
+      else
+        super
+      end
+  end
 end
