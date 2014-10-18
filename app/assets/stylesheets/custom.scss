@@ -22,6 +22,14 @@ body {
 	// font-family: 
 }
 
+footer {
+	@include center;
+	padding: 30px 0;
+	min-height: 50px;
+	border-top: 1px solid #ECECEC;
+	background-color: rgb(240, 240, 240);
+}
+
 .landing {
 	.promo-section {
 		// @include at2x('landing-bg', jpg);
@@ -44,31 +52,79 @@ body {
 			margin-top: 54px;
 		}
 	}
+
 	.what {
-		min-height: 300px;
+		min-height: 100px;
 		padding-top: 20px;
 		padding-bottom: 30px;
-		font-size: 30px;
-		text-align: center;
+		background-color: #FAFAFA;
 		.title {
-
+			@include center;
+			font-size: 30px;
+			color: #898989;
 		}
 		.desc {
-
+			@include center;
+			margin-top: 30px;
+			font-family: Avenir-Book;
+			font-size: 24px;
 		}
 	}
+
 	.how {
+		padding: 40px 0;
+		min-height: 500px;
+		padding-bottom: 50px;
+		background-color: #F6F6F6;
 		.head {
-
+			@include center;
+			font-family: Avenir-Book;
+			font-size: 40px;
+			color: #898989;
 		}
-		img.icon {
-
+		.icon {
+			@include center;
+			margin-top: 48px;
+			height: 100px;
 		}
 		.title {
-
+			@include center;
 		}
 		.desc {
+			@include center;
+			margin-top: 18px;
+			font-size: 20px;
+			color: #898989;
+		}
+		.action {
+			@include center;
+			margin-top: 74px;
+		}
+	}
 
+	.why {
+		padding: 40px 0;
+		min-height: 435px;
+		padding-bottom: 50px;
+		background-color: #FAFAFA;
+		.title {
+			@include center;
+			font-family: Avenir-Book;
+			font-size: 40px;
+			color: #898989;
+		}
+		.desc {
+			@include center;
+			margin: 48px auto; 
+			font-family: Avenir-Book;
+			font-size: 24px;
+			color: #29292F;
+			line-height: 33px;
+			max-width: 620px;
+		}
+		.action {
+			@include center;
+			margin-top: 50px;
 		}
 	}
 }
