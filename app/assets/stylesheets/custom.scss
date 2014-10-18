@@ -1,0 +1,74 @@
+@mixin at2x($path, $ext: "jpg", $w: auto, $h: auto) {
+	$at1x_path: "#{$path}.#{$ext}";
+	$at2x_path: "#{$path}@2x.#{$ext}";
+
+	background-image: image-url("#{$at1x_path}");
+
+	@media all and (-webkit-min-device-pixel-ratio : 1.5),
+				 all and (-o-min-device-pixel-ratio: 3/2),
+				 all and (min--moz-device-pixel-ratio: 1.5),
+				 all and (min-device-pixel-ratio: 1.5) {
+					 background-image: image-url("#{$at2x_path}");
+					 background-size: $w $h;
+	}
+}
+
+@mixin center {
+	text-align: center;
+}
+
+body {
+	margin: 0px;
+	// font-family: 
+}
+
+.landing {
+	.promo-section {
+		// @include at2x('landing-bg', jpg);
+		background-image: image-url("landing-bg.jpg");
+		background-size: cover !important;
+		background-repeat: no-repeat;
+		min-height: 500px;
+		padding-bottom: 50px;
+		.title {
+			@include center;
+			padding-top: 180px;
+			font-size: 47px;
+			color: #E2CFBA;
+			max-width: 545px;
+			margin: 0 auto;
+			font-family: 'Avenir-Book';
+		}
+		.action {
+			@include center;
+			margin-top: 54px;
+		}
+	}
+	.what {
+		min-height: 300px;
+		padding-top: 20px;
+		padding-bottom: 30px;
+		font-size: 30px;
+		text-align: center;
+		.title {
+
+		}
+		.desc {
+
+		}
+	}
+	.how {
+		.head {
+
+		}
+		img.icon {
+
+		}
+		.title {
+
+		}
+		.desc {
+
+		}
+	}
+}
