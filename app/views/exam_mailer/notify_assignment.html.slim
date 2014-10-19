@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta charset="utf-8" 
+    meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" 
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  body 
+    container
+      h1 Hi, #{@user.username}
+      p 
+        strong #{@quizmaster.username.titlecase} 
+        | has sent you an assignment on Qizler.
+      p To take this exam, just simply follow this link:
+      p 
+        a href=@url #{@url}
+      p Keep in mind though that life is not Mario, so once you start the exam, you only get one attempt to finish.
+      p
+      p Thank you, and good luck!
+      p
+      p Qizler Team
+
+
