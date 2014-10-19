@@ -14,15 +14,20 @@
 			.row
 				.col-sm-8.col-sm-offset-2
 					table.table.table-striped.table-hover
-						- @assignments.each_with_index do |assignment, row|
-							- if assignment.finished_at 
-								tr.success
-							- else
-								tr
+					    thead
+    						tr
+						    	th #
+						      	th Candidate
+						      	th Submitted time
+						      	th Score
+						tbody
+							- @assignments.each_with_index do |assignment, row|
+								tr class="#{assignment.finished_at ? 'success':'warning' }"
 									td = row + 1
 									td = assignment.user.email
 									td
 										- if assignment.finished_at
-											= assignment.score
+											= time_ago_in_words(assignment.finished_at)		  
 										- else
-											| not started	
+											| not started
+									td = assignment.score	
