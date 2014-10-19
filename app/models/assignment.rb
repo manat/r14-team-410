@@ -4,7 +4,7 @@ class Assignment < ActiveRecord::Base
 
   def self.as_progress_pie_chart(quizmaster)
     finished = Assignment.joins(:exam)
-                         .where('exams.user_id = ? AND finished_at <> NULL', quizmaster)
+                         .where('exams.user_id = ? AND finished_at is not NULL', quizmaster)
                          .count
     unfinished = Assignment.joins(:exam)
                            .where('exams.user_id = ? AND finished_at IS NULL', quizmaster)
