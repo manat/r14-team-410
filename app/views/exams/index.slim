@@ -35,6 +35,7 @@
 									= assignment.user.email
 								- unless assignment.finished_at.nil?
 									= assignment.score
+									= time_ago_in_words(assignment.finished_at)
 								- else
 									| not started
 

@@ -44,7 +44,7 @@
 
 	.form-group class="#{@question.errors[:solution].any? ? 'has-error' : ''}"
 			label class='control-label' Solution
-			= f.text_area :solution, class: 'form-control '
+			= f.text_field :solution, class: 'form-control '
 			- if @question.errors[:solution]
 				p.help-block 
 					= @question.errors[:solution].first

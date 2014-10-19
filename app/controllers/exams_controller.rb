@@ -53,7 +53,7 @@ class ExamsController < ApplicationController
 		if assignment.nil?
 			assignment = Assignment.new(user: candidate, exam: exam)
 			assignment.save!
-		elsif assignment.score.nil? && assignment.finished_at.nil?
+		elsif (assignment.score == 0 || assignments.score.nil?) && assignment.finished_at.nil?
 			assignment.delete
 			assignment = Assignment.new(user: candidate, exam: exam)
 			assignment.save!
