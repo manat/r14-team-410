@@ -68,7 +68,7 @@ class ExamsController < ApplicationController
 
 	def evaluation
 		@exam        = Exam.find(params[:exam_id])
-		@assignments = Assignment.where(exam: @exam).order(created_at: :desc)
+		@assignments = Assignment.where(exam: @exam).order(finished_at: :asc)
 	end
 
 	private
