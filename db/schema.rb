@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019043208) do
+ActiveRecord::Schema.define(version: 20141019070626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "exam_id"
+    t.decimal  "score",       precision: 5, scale: 2
+    t.datetime "finished_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assignments", ["exam_id"], name: "index_assignments_on_exam_id", using: :btree
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
 
   create_table "exams", force: true do |t|
     t.string   "name"
