@@ -2,13 +2,8 @@ require 'test_helper'
 
 class ExamMailerTest < ActionMailer::TestCase
   test "sending assignment notification" do
-    quizmaster = users(:quizmaster)
-    candidate = users(:candidate)
-    assignment = { 
-      exam: Exam.new(user: quizmaster), 
-      user: candidate, 
-      url: 'http://qizler.com/a423343' 
-    }
+    assignment = assignments(:assignment_one)
+    candidate = assignment.user
 
     email = ExamMailer.notify_assignment(assignment).deliver
 

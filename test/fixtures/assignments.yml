@@ -1,13 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 
-  exam_id: 
-  score: 9.99
-  finished_at: 2014-10-19 14:06:26
-
-two:
-  user_id: 
-  exam_id: 
-  score: 9.99
-  finished_at: 2014-10-19 14:06:26
+assignment_one:
+  user: quizmaster
+  exam: exam_one
+  

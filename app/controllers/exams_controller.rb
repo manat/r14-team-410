@@ -59,7 +59,8 @@ class ExamsController < ApplicationController
 			assignment.save!
 		end
 
-		# TODO: send email
+		# TODO: send email as background job
+		ExamMailer.notify_assignment(assignment).deliver
 
 		redirect_to exams_path
 	end
