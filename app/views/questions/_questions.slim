@@ -17,7 +17,7 @@
 	.count
 		= pluralize @questions.count, 'question'
 		.action
-			= link_to new_exam_question_path(@exam)
+			= link_to new_exam_question_path(@exam), :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"add"
 				i class='fa fa-plus'
 
 	ul.exams
@@ -26,7 +26,7 @@
 				.name
 					= link_to question.title, exam_question_path(@exam, question)
 				.action
-					= link_to edit_exam_question_path(@exam, question)
+					= link_to edit_exam_question_path(@exam, question), :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"edit"
 						i class='fa fa-edit'
-					= link_to exam_question_path(@exam, question), method: :delete, data: { confirm: 'Are you sure?' } do
+					= link_to exam_question_path(@exam, question), method: :delete, data: { confirm: 'Are you sure?' }, :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"delete" do
 						i class='fa fa-remove'

@@ -3,7 +3,7 @@
 		h4 
 			span Exam
 			.action
-				= link_to new_exam_path
+				= link_to new_exam_path, :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"add"
 					i class='fa fa-plus'
 
 		ul.exams
