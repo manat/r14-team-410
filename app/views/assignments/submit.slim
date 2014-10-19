@@ -4,6 +4,6 @@
 			.text-center
 				h1 
 					| Your score: 
-					= @assignment.score
+					= "%g%" % ("%.2f" % @assignment.score)
 					
 				= link_to 'Home', root_path

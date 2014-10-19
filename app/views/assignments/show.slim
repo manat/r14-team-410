@@ -6,7 +6,7 @@
 			.head
 				= exam.name
 			.count
-				= pluralize exam.questions.count, 'question'
+				= "Total: #{pluralize(exam.questions.count, 'question')}"
 			
 			= form_tag url_for(controller: 'assignments', action: 'submit')
 				- @questions.each_with_index do |question, index|

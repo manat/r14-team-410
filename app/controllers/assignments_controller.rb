@@ -16,7 +16,8 @@ class AssignmentsController < ApplicationController
 			question = @assignment.exam.questions.select{ |q| q.id == answer[0].to_i }.first
 			@score = @score + 1 if question.solution.to_i == answer[1].to_i
 		end
-
+		@score = (100 / answers.size) * @score
+		
 		@assignment.update(score: @score, finished_at: Time.now)
 	end
 
