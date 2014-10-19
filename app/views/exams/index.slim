@@ -16,8 +16,12 @@
 							i class='fa fa-edit'
 						= link_to exam_path(exam), method: :delete do
 							i class='fa fa-remove'
-						a.sendemail href="" data-toggle="modal" data-target="#modal-assign" data-examid="#{exam.id}"
-							i class='fa fa-paper-plane'
+						- if exam.questions.count != 0
+							a.sendemail href="" data-toggle="modal" data-target="#modal-assign" data-examid="#{exam.id}" 
+								i class='fa fa-paper-plane'
+						- else
+							a.sendemail onclick="return false" data-toggle="tooltip" data-placement="top" data-original-title=("Question is required before publishing")
+								i class='fa fa-paper-plane'
 						= link_to exam_evaluation_path(exam)
 							i class='fa fa-users'
 
