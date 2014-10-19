@@ -16,11 +16,6 @@
 				= @question.description
 
 		.form-group
-			label class='control-label' Question Type
-			.form-control-static
-				= @question.question_type
-
-		.form-group
 			label class='control-label' Choice 1
 			.form-control-static
 				= @question.choice1
@@ -39,8 +34,14 @@
 			label class='control-label' Choice 4
 			.form-control-static
 				= @question.choice4
-
+		
 		.form-group
-			label class='control-label' Solution
-			.form-control-static
-				= @question.solution
+				label class='control-label' Solution
+				.form-control-static
+					= @question.solution
+
+		/
+			.form-group
+				label class='control-label' Question Type
+				.form-control-static
+					= @question.question_type
