@@ -12,17 +12,13 @@
 					.name
 						= link_to exam.name, exam_questions_path(exam)
 					.action
-						= link_to edit_exam_path(exam)
+						= link_to edit_exam_path(exam), :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"edit"
 							i class='fa fa-edit'
-						= link_to exam_path(exam), method: :delete do
+						= link_to exam_path(exam), method: :delete, :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"delete" do
 							i class='fa fa-remove'
-						- if exam.questions.count != 0
-							a.sendemail href="" data-toggle="modal" data-target="#modal-assign" data-examid="#{exam.id}" 
-								i class='fa fa-paper-plane'
-						- else
-							a.sendemail onclick="return false" data-toggle="tooltip" data-placement="top" data-original-title=("Question is required before publishing")
-								i class='fa fa-paper-plane'
-						= link_to exam_evaluation_path(exam)
+						a.sendemail href="" data-toggle="modal" data-target="#modal-assign" data-examid="#{exam.id}" 
+							i class='fa fa-paper-plane'
+						= link_to exam_evaluation_path(exam), :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"status"
 							i class='fa fa-users'
 
 	.qiz-section
@@ -44,6 +40,7 @@
 				.modal-body
 					label.control-label Email
 					input.form-control type='text' name='email'
+					p.help-block Make sure that you have created question before publish.
 				.modal-footer
 					button.btn.btn-primary Send
 					button type="button" class="btn btn-default" data-dismiss="modal" Close
