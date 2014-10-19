@@ -25,10 +25,8 @@
 		.container-fluid
 			.row
 				.col-sm-12
-					= javascript_include_tag "//www.google.com/jsapi", "chartkick"
 					h4 Dashboard
-					= pie_chart @candidate_progess_pie_chart
-					h5.text-center Candidates Progress
+					= render 'progress_pie_chart' if @assignments.count > 0
 
 #modal-assign.modal
 	.modal-dialog
