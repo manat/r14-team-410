@@ -7,19 +7,22 @@
 
 	.form-section.lg
 		.container-fuild
-			.page-header
-				h4 Exam status
-
 			.row
-				.col-sm-12
-					ul.assignments
-						- @assignments.each do |assignment|
-							li.assignment
-								.exam
-									= assignment.exam.name
-								.candidate
-									= assignment.user.email
-								- unless assignment.finished_at.nil?
-									= assignment.score
-								- else
-									| not started	
+				.col-sm-8.col-sm-offset-2
+					.page-header
+						h4 = @exam.name
+			.row
+				.col-sm-8.col-sm-offset-2
+					table.table.table-striped.table-hover
+						- @assignments.each_with_index do |assignment, row|
+							- if assignment.finished_at 
+								tr.success
+							- else
+								tr
+									td = row + 1
+									td = assignment.user.email
+									td
+										- if assignment.finished_at
+											= assignment.score
+										- else
+											| not started	
