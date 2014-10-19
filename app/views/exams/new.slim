@@ -1,12 +1,14 @@
 .exam-form
-	.exams-section 
-		h4 
-			span Create Exam
+	.exams-section.mini
+		h4
 			.action
 				= link_to exams_path
 					i class='fa fa-angle-left'
 
-	.form-section
-		.row
-			.col-sm-12
-				= render 'form'
+	.form-section.lg
+		.container-fuild
+			.page-header
+				h4 Create Exam
+			.row
+				.col-sm-12
+					= render 'form'

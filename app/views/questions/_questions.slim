@@ -1,18 +1,18 @@
 
-.exams-section 
-	h4 
-		= @exam.name
-		.action
+.exams-section.child
+	h4
+		.action.left
 			= link_to exams_path
 				i class='fa fa-angle-left'
+			= @exam.name
 	
 	.desc
 		= @exam.description
 
 	.duration
-		span in 
+		| in 
 		= @exam.duration
-		span  minutes	
+		|  minutes	
 
 	.count
 		= pluralize @questions.count, 'question'
