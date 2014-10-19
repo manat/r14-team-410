@@ -1,5 +1,5 @@
 class Exam < ActiveRecord::Base
-	belongs_to :creator
+	belongs_to :user
 	has_many :questions
 
 	validates :name, presence: true

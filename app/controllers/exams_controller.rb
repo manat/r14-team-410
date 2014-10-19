@@ -2,8 +2,7 @@ class ExamsController < ApplicationController
 	before_action :set_exam, only: [:edit, :update, :destroy]
 
 	def index
-		current_user = Creator.first
-		@exams = Exam.where(creator: current_user).order(created_at: :desc)
+		@exams = Exam.where(user: current_user).order(created_at: :desc)
 	end
 
 	# def show
@@ -18,7 +17,7 @@ class ExamsController < ApplicationController
 		@exam = Exam.new(exam_params)
 		begin
 			# create exam
-			@exam.creator = Creator.first
+			@exam.user = current_user
 			@exam.save! #raise exception then rollback
 			redirect_to exams_path #(current_user.company)
 		rescue ActiveRecord::RecordInvalid
