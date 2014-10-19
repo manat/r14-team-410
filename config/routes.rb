@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :exams do
+    post 'assign' => 'exams#assign', as: :assign
+    get 'evaluation' => 'exams#evaluation', as: :evaluation
     resources :questions
-    # get 'exam/:exam_id/questions' => 'questions#exam'#, as: :exam_questions
   end
 
   # get 'questions/exam/:exam_id' => 'questions#exam', as: :exam_questions

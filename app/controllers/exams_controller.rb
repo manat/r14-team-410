@@ -3,10 +3,8 @@ class ExamsController < ApplicationController
 
 	def index
 		@exams = Exam.where(user: current_user).order(created_at: :desc)
+		@assignments = Assignment.where(exam: @exams).order(created_at: :desc)
 	end
-
-	# def show
-	# end
 
 	def new
 		@exam = Exam.new
@@ -44,6 +42,31 @@ class ExamsController < ApplicationController
 	def destroy
 		@exam.destroy
 		redirect_to exams_path
+	end
+
+	def assign
+		exam       = Exam.find(params[:exam_id])
+		candidate  = User.find_by(email: params[:email])
+		candidate  = User.create!(:email => params[:email], :password => 'password', :password_confirmation => 'password') if candidate.nil?
+
+		assignment = Assignment.find_by(user: candidate, exam: exam)
+		if assignment.nil?
+			assignment = Assignment.new(user: candidate, exam: exam)
+			assignment.save!
+		elsif assignment.score.nil? && assignment.finished_at.nil?
+			assignment.delete
+			assignment = Assignment.new(user: candidate, exam: exam)
+			assignment.save!
+		end
+
+		# TODO: send email
+
+		redirect_to exams_path
+	end
+
+	def evaluation
+		@exam        = Exam.find(params[:exam_id])
+		@assignments = Assignment.where(exam: @exam).order(created_at: :desc)
 	end
 
 	private

@@ -16,17 +16,39 @@
 							i class='fa fa-edit'
 						= link_to exam_path(exam), method: :delete do
 							i class='fa fa-remove'
-						a href=""
+						a.sendemail href="" data-toggle="modal" data-target="#modal-assign" data-examid="#{exam.id}"
 							i class='fa fa-paper-plane'
-						a href="" 
+						= link_to exam_evaluation_path(exam)
 							i class='fa fa-users'
 
 	.qiz-section
-		.row
-			.col-sm-12
-				h4 Dashboard
+		.container-fluid
+			.row
+				.col-sm-12
+					h4 Dashboard
+					ul.assignments
+						- @assignments.each do |assignment|
+							li.assignment
+								.exam
+									= assignment.exam.name
+								.candidate
+									= assignment.user.email
+								- unless assignment.finished_at.nil?
+									= assignment.score
+								- else
+									| not started
 
 
-
-
-			
+#modal-assign.modal
+	.modal-dialog
+		.modal-content
+			= form_tag 
+				.modal-header
+					button.close type='button' data-dismiss="modal" aria-hidden="true" x
+					h4.modal-title Assignment
+				.modal-body
+					label.control-label Email
+					input.form-control type='text' name='email'
+				.modal-footer
+					button.btn.btn-primary Send
+					button type="button" class="btn btn-default" data-dismiss="modal" Close

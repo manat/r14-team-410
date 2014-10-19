@@ -1,0 +1,25 @@
+.exam-form
+	.exams-section.mini
+		h4
+			.action
+				= link_to exams_path
+					i class='fa fa-angle-left'
+
+	.form-section.lg
+		.container-fuild
+			.page-header
+				h4 Exam status
+
+			.row
+				.col-sm-12
+					ul.assignments
+						- @assignments.each do |assignment|
+							li.assignment
+								.exam
+									= assignment.exam.name
+								.candidate
+									= assignment.user.email
+								- unless assignment.finished_at.nil?
+									= assignment.score
+								- else
+									| not started	
