@@ -22,6 +22,7 @@ gem 'figaro'
 # Authentication
 gem 'devise'
 gem 'omniauth-github'
+gem 'cancancan'
 
 # gem 'autoprefixer-rails'
 # gem 'nprogress-rails'

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  ROLES = %w[admin quizmaster candidate]
+
   attr_accessor :login
   has_many :exams
 
@@ -35,5 +37,13 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth_data)
     User.find_from_omniauth(auth_data) || User.create_from_omniauth(auth_data)
+  end
+
+  def admin?
+    self.role == 'admin'
+  end
+
+  def quizmaster?
+    self.role == 'quizmaster'
   end
 end

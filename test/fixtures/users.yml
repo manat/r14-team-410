@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin:
+  username: admin
+  email: qizler-admin@example.com
+  role: admin
+
+quizmaster:
+  username: quizmaster
+  email: qizle-quizmaster@example.com
+  role: quizmaster
+
+candidate: 
+  username: candidate
+  email: qizle-candidate@example.com
+  role: candidate
