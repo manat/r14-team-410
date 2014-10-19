@@ -4,12 +4,10 @@ one:
   user_id: 
   exam_id: 
   score: 9.99
-  status: 1
   finished_at: 2014-10-19 14:06:26
 
 two:
   user_id: 
   exam_id: 
   score: 9.99
-  status: 1
   finished_at: 2014-10-19 14:06:26
