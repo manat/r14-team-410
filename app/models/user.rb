@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   def self.create_from_omniauth(auth_data)
     user = User.new.tap do |u|
       u.username = auth_data[:info][:nickname]
-      u.email = auth_data[:info][:email]
+      u.email = auth_data[:info][:email] || ''
       u.provider = auth_data[:provider]
       u.uid = auth_data[:uid]
       u.save(:validate => false)

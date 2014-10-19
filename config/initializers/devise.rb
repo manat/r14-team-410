@@ -7,7 +7,7 @@ Devise.setup do |config|
   # config.secret_key = 'a7f84352cdaaddd539208f24ab9f65ee5ce4679b67f1ea50cc6d47b7aa2c3a33bf2bf7c63b5f3f6e90353e8d1c3611a961dcc31b51f95778c06984d73bec83bf'
 
   # Provider
-  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET']
+  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 'user:email,public_repo'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
