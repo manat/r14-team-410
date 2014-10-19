@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  get 'assignments/:id' => 'assignments#show'
+  get 'assignments/:id' => 'assignments#show', as: :assignments
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

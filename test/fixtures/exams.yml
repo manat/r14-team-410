@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  duration: 1
+exam_one:
+  name: One
+  description: The one
+  duration: 60
+  user: quizmaster
 
-two:
-  name: MyString
-  description: MyText
-  duration: 1

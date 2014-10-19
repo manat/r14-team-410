@@ -3,11 +3,11 @@ class ExamMailerPreview < ActionMailer::Preview
   def notify_assignment
     quizmaster = User.new(username: 'quizmaster')
     candidate = User.new(username: 'candidate', email: 'candidate@example.com')
-    assignment = { 
+    assignment = Assignment.new(
+      id: 1,
       exam: Exam.new(user: quizmaster), 
       user: candidate, 
-      url: 'http://qizler.com/a423343' 
-    }
+    )
 
     ExamMailer.notify_assignment(assignment)
   end
