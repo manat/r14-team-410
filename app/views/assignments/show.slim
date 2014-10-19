@@ -1,0 +1,18 @@
+- exam = @assignment.exam
+
+.container.assignment
+	.row
+		.col-md-6.col-md-offset3
+			.head
+				= exam.name
+			.count
+				= pluralize exam.questions.count, 'question'
+			
+			- exam.questions.each_with_index do |question, index|
+				.title
+					.index
+						= index + 1
+					= question.title
+				.answers
+					.choice
+						= radio_button_tag "#{[question][question.id]}", "#{question.choice1}"
