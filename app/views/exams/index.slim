@@ -25,20 +25,10 @@
 		.container-fluid
 			.row
 				.col-sm-12
+					= javascript_include_tag "//www.google.com/jsapi", "chartkick"
 					h4 Dashboard
-					ul.assignments
-						- @assignments.each do |assignment|
-							li.assignment
-								.exam
-									= assignment.exam.name
-								.candidate
-									= assignment.user.email
-								- unless assignment.finished_at.nil?
-									= assignment.score
-									= time_ago_in_words(assignment.finished_at)
-								- else
-									| not started
-
+					= pie_chart @candidate_progess_pie_chart
+					h5.text-center Candidates Progress
 
 #modal-assign.modal
 	.modal-dialog

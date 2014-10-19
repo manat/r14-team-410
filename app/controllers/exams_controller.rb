@@ -4,6 +4,7 @@ class ExamsController < ApplicationController
 	def index
 		@exams = Exam.where(user: current_user).order(created_at: :desc)
 		@assignments = Assignment.where(exam: @exams).order(created_at: :desc)
+		@candidate_progess_pie_chart = Assignment.as_progress_pie_chart(current_user)
 	end
 
 	def new

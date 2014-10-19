@@ -16,6 +16,9 @@ gem 'bootstrap-material-design'
 gem 'font-awesome-rails'
 gem 'awesome_print'
 
+# Charts
+gem 'chartkick'
+
 # Env Config
 gem 'figaro'
 
