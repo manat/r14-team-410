@@ -7,7 +7,7 @@
 				= @exam.errors[:name].first
 
 	.form-group class="#{@exam.errors[:description].any? ? 'has-error' : ''}"
-		label class='control-label' Description
+		label class='control-label' Description (optional)
 		= f.text_area :description, class: 'form-control '
 		- if @exam.errors[:description]
 			p.help-block 

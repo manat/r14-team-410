@@ -8,7 +8,7 @@
 				= @question.errors[:title].first
 
 	.form-group class="#{@question.errors[:description].any? ? 'has-error' : ''}"
-		label class='control-label' Description
+		label class='control-label' Description (optional)
 		= f.text_area :description, class: 'form-control '
 		- if @question.errors[:description]
 			p.help-block 
@@ -17,34 +17,34 @@
 	.form-group class="#{@question.errors[:choice1].any? ? 'has-error' : ''}"
 		label class='control-label' Choice 1
 		= f.text_field :choice1, class: 'form-control '
-		- if @exam.errors[:choice1]
+		- if @question.errors[:choice1]
 			p.help-block 
-				= @exam.errors[:choice1].first
+				= @question.errors[:choice1].first
 
 	.form-group class="#{@question.errors[:choice2].any? ? 'has-error' : ''}"
 		label class='control-label' Choice 2
 		= f.text_field :choice2, class: 'form-control '
-		- if @exam.errors[:choice2]
+		- if @question.errors[:choice2]
 			p.help-block 
-				= @exam.errors[:choice2].first
+				= @question.errors[:choice2].first
 
 	.form-group class="#{@question.errors[:choice3].any? ? 'has-error' : ''}"
 		label class='control-label' Choice 3
 		= f.text_field :choice3, class: 'form-control '
-		- if @exam.errors[:choice3]
+		- if @question.errors[:choice3]
 			p.help-block 
-				= @exam.errors[:choice3].first
+				= @question.errors[:choice3].first
 
 	.form-group class="#{@question.errors[:choice4].any? ? 'has-error' : ''}"
 		label class='control-label' Choice 4
 		= f.text_field :choice4, class: 'form-control '
-		- if @exam.errors[:choice4]
+		- if @question.errors[:choice4]
 			p.help-block 
-				= @exam.errors[:choice4].first
+				= @question.errors[:choice4].first
 
 	.form-group class="#{@question.errors[:solution].any? ? 'has-error' : ''}"
 			label class='control-label' Solution
-			= f.text_field :solution, class: 'form-control '
+			= f.select :solution, options_for_select([1,2,3,4].collect { |c| [c, c] }, selected: @question.solution), {} , class: "form-control"
 			- if @question.errors[:solution]
 				p.help-block 
 					= @question.errors[:solution].first
