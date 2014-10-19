@@ -2,17 +2,36 @@
 
 .container.assignment
 	.row
-		.col-md-6.col-md-offset3
+		.col-md-6.col-md-offset-3
 			.head
 				= exam.name
 			.count
 				= pluralize exam.questions.count, 'question'
 			
-			- exam.questions.each_with_index do |question, index|
-				.title
-					.index
-						= index + 1
-					= question.title
-				.answers
-					.choice
-						= radio_button_tag "#{[question][question.id]}", "#{question.choice1}"
+			= form_tag url_for(controller: 'assignments', action: 'submit')
+				- @questions.each_with_index do |question, index|
+					.title
+						.form-group
+							= question.title
+					.form-group
+						.radio.radio-primary
+							label
+								= radio_button_tag "[question]#{[question.id]}", "1"
+								= question.choice1
+						.radio.radio-primary
+							label
+								= radio_button_tag "[question]#{[question.id]}", "2"
+								= question.choice2
+						.radio.radio-primary
+							label
+								= radio_button_tag "[question]#{[question.id]}", "3"
+								= question.choice3
+						.radio.radio-primary
+							label
+								= radio_button_tag "[question]#{[question.id]}", "4"
+								= question.choice4
+				.form-group
+					.text-center
+						button class='btn btn-primary' send
+
+

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   get 'assignments/:id' => 'assignments#show'
+  post 'assignments/:id' => 'assignments#submit'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
