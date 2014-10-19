@@ -71,7 +71,7 @@ Rails.application.configure do
     enable_starttls_auto: true 
   }
 
-  config.action_mailer.default_url_options = { host: 'cryptic-cliffs-8097.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'qizler.r14.railsrumble.com' }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
