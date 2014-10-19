@@ -1,3 +1,7 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
 @mixin at2x($path, $ext: "jpg", $w: auto, $h: auto) {
 	$at1x_path: "#{$path}.#{$ext}";
 	$at2x_path: "#{$path}@2x.#{$ext}";
@@ -18,6 +22,7 @@
 }
 
 body {
+	background-color: #fff !important;
 	margin: 0px;
 	// font-family: 
 }
@@ -31,6 +36,7 @@ footer {
 }
 
 .navbar {
+	border-radius: 0px !important;
 	margin-bottom: 0px !important;
 }
 
@@ -136,15 +142,15 @@ footer {
 .creator-dashboard, .exam-form {
 	.exams-section {
 		width: 300px;
-		height: 100%;
+		height: calc(100% - 62px);
 		max-height: 100%;
 		overflow-x: hidden;
 		overflow-y: scroll;
 		position: absolute;
 		background-color: #efefef;
 		&.mini {
-			width: 70px;
-			background-color: #3F51B5;
+			width: 55px;
+			background-color: #ccc;
 		}
 		h4 {
 			padding: 20px 10px;
@@ -201,7 +207,7 @@ footer {
 	.qiz-section, .form-section {
 		width: 500px;
 		width: calc(100% - 300px);
-		height: 100%;
+		height: calc(100% - 62px);
 		max-height: 100%;
 		overflow-x: hidden;
 		overflow-y: scroll;
@@ -211,8 +217,8 @@ footer {
 		left: 300px;
 		&.lg {
 			width: 700px;
-			width: calc(100% - 70px);
-			left: 70px;
+			width: calc(100% - 55px);
+			left: 55px;
 		}
 		> *:first-child {
 			margin-top: 15px;	
@@ -223,7 +229,7 @@ footer {
 .exam-form {
 	.exams-section {
 		&.child {
-			border-left: 10px solid #3F51B5;	
+			border-left: 10px solid #ccc;	
 		}
 		.desc {
 			margin-top: 30px;

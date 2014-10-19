@@ -7,25 +7,29 @@ html
 		= csrf_meta_tags
 	body
 
-		/ todo: hide if user_signed_in? == false
-		/
-			.navbar.navbar-default
-				.navbar-header
-					button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
+		- if user_signed_in?
+			header.navbar.navbar-default
+				.container-fluid
+					.navbar-header
+						button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						= link_to Qizler, root_path, class: "navbar-brand"
 
-					= link_to Qizler, root_path, class: "navbar-brand"
-					
-				.navbar-collapse.collapse.navbar-responsive-collapse
-					ul.nav.navbar-nav
-					
-					/
-						ul.nav.navbar-nav.navbar-right
+					.navbar-collapse.collapse.navbar-collapse
+						ul.nav.navbar-nav
 							li
-								a href="javascript:void(0)" Try it free
-					
+								= link_to 'New Exam', new_exam_path
+						ul.nav.navbar-nav.navbar-right
+							li.dropdown
+								a.dropdown-toggle href="#" data-toggle='dropdown' 
+									= current_user.username
+									b.caret
+								ul.dropdown-menu
+									li
+										= link_to 'Sign out', destroy_user_session_path, method: :delete 
+						
 		== yield
 
 	footer &copy; 2014 Qizler, ALL RIGHTS RESERVED.
