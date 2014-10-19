@@ -28,5 +28,5 @@
 				.action
 					= link_to edit_exam_question_path(@exam, question)
 						i class='fa fa-edit'
-					= link_to exam_question_path(@exam, question), method: :delete do
+					= link_to exam_question_path(@exam, question), method: :delete, data: { confirm: 'Are you sure?' } do
 						i class='fa fa-remove'

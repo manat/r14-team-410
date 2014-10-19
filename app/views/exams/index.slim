@@ -14,7 +14,7 @@
 					.action
 						= link_to edit_exam_path(exam), :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"edit"
 							i class='fa fa-edit'
-						= link_to exam_path(exam), method: :delete, :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"delete" do
+						= link_to exam_path(exam), method: :delete, :'data-toggle'=>'tooltip', :'data-placement'=>"top", :'title'=>"delete", data: { confirm: 'Are you sure?' } do
 							i class='fa fa-remove'
 						a.sendemail href="" data-toggle="modal" data-target="#modal-assign" data-examid="#{exam.id}" 
 							i class='fa fa-paper-plane'
