@@ -1,3 +1,6 @@
-= javascript_include_tag "//www.google.com/jsapi", "chartkick"
-= pie_chart @candidate_progess_pie_chart
-h5.text-center Candidates Progress
+- if @assignments.count > 0
+  = javascript_include_tag "//www.google.com/jsapi", "chartkick"
+  = pie_chart @candidate_progess_pie_chart
+  h5.text-center Candidates Progress
+- else
+  p.text-warning You haven't invited any candidates!
